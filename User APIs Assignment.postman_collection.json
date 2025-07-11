@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "a91fa6bc-b80d-4412-86e9-be0253da69b0",
+		"name": "User APIs Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34662495"
+	},
+	"item": [
+		{
+			"name": "userRegister",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"demo1\",\r\n  \"email\": \"demo1@gmail.com\",\r\n  \"password\": \"demo123\",\r\n  \"address\": \"Noida sector 16 metro\",\r\n  \"latitude\": \"28.585821737646118\",\r\n  \"longitude\": \"77.31112287701112\",\r\n  \"status\":\"inactive\"\r\n}\r\n ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateStatus",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NzBjMmJkM2FjOGJjMjg1ZTcxNGRiNyIsImlhdCI6MTc1MjIyMDM0OSwiZXhwIjoxNzUyODI1MTQ5fQ.YKQrJIlV4uJClGNvi3KtXxorK6v63FmN4MfWaYjQ8-A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/users/toggle-status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"toggle-status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "calculatedistance",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NzBjMmJkM2FjOGJjMjg1ZTcxNGRiNyIsImlhdCI6MTc1MjIyMDM0OSwiZXhwIjoxNzUyODI1MTQ5fQ.YKQrJIlV4uJClGNvi3KtXxorK6v63FmN4MfWaYjQ8-A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/users/distance?input_latitude=28.617221012511596&input_longitude=77.37371728442136",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"distance"
+					],
+					"query": [
+						{
+							"key": "input_latitude",
+							"value": "28.617221012511596"
+						},
+						{
+							"key": "input_longitude",
+							"value": "77.37371728442136"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "calculateweek_number",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NzBjMmJkM2FjOGJjMjg1ZTcxNGRiNyIsImlhdCI6MTc1MjIyMDM0OSwiZXhwIjoxNzUyODI1MTQ5fQ.YKQrJIlV4uJClGNvi3KtXxorK6v63FmN4MfWaYjQ8-A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/users/listing?week_number=6,5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"listing"
+					],
+					"query": [
+						{
+							"key": "week_number",
+							"value": "6,5"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
